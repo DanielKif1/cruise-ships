@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cruise ship</title>
+</head>
+<body>
+    <!--<div class="addport">
+       <h4>Add port</h4>
+       <input type="text" placeholder="Add port name"><br>
+
+       <button>ADD</button>
+    </div>
+    -->
+
+    <div id="viewport">
+         <div id="ports">
+            <div class="port"></div>
+            <div class="port"></div>
+            <div class="port"></div>
+         </div>
+         <div id="message">Testing!</div>
+         <div id="ship"></div>
+    </div>
+    <script src="/controller.js"></script>
+    <script src="/port.js"></script>
+    <script src="/itinerary.js"></script>
+    <script src="/ship.js"></script>
+
+    <button id="setSailButton">set Sail </button>
+    <script>
+        
+        const itinerary = new Itinerary([
+           new Port('New York City'), 
+           new Port('Grand Turk'),
+           new Port('San Juan'),
+           new Port('Matadi'),
+
+           
+    ]);
+
+    const ship = new Ship(itinerary);
+   const controller = new Controller(ship);
+
+   controller.renderPorts(itinerary.ports);
+ controller.renderShip();
+
+    </script>
+</body>
+</html>
